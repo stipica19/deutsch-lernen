@@ -51,12 +51,13 @@ const HomePage = () => {
         <Card>
           <CardContent>
             <Typography variant="h5" align="center">
-              Lückensätze (deaktiviert)
+              Mix
             </Typography>
             <Typography variant="body2" align="center" sx={{ mt: 2 }}>
-              Üben Sie den richtigen Satzbau. (Derzeit nicht verfügbar)
+              Üben Sie den richtigen Satzbau.
             </Typography>
-            <div
+            <Link
+              to="/game/sentences"
               style={{
                 textDecoration: "none",
                 display: "block",
@@ -69,15 +70,14 @@ const HomePage = () => {
                 sx={{
                   display: "inline-block",
                   padding: "8px 16px",
-                  backgroundColor: "grey",
+                  backgroundColor: "primary.main",
                   color: "white",
                   borderRadius: "4px",
-                  cursor: "not-allowed",
                 }}
               >
-                Deaktiviert
+                Starten
               </Typography>
-            </div>
+            </Link>
           </CardContent>
         </Card>
       </Grid>

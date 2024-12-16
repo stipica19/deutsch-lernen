@@ -380,5 +380,201 @@ const words = [
   { word: "Zielgruppe", gender: "die" },
   { word: "Zwilling", gender: "der" },
 ];
+const grammatik = [
+  {
+    text: "Das ist ___ Auto.",
+    options: ["ein", "eine", "einen"],
+    correct: "ein",
+    explanation:
+      "Das Wort 'Auto' ist neutral, daher benutzt man 'ein' im Nominativ.",
+  },
+  {
+    text: "Der Hund gehört ___ Mann.",
+    options: ["dem", "den", "der"],
+    correct: "dem",
+    explanation: "Das Verb 'gehören' verlangt den Dativ, daher 'dem Mann'.",
+  },
+  {
+    text: "Ich sehe ___ Katze.",
+    options: ["die", "der", "den"],
+    correct: "die",
+    explanation: "Das Verb 'sehen' verlangt den Akkusativ, daher 'die Katze'.",
+  },
+  {
+    text: "Wir sprechen über ___ Film.",
+    options: ["den", "dem", "der"],
+    correct: "den",
+    explanation:
+      "Die Präposition 'über' verlangt den Akkusativ, daher 'den Film'.",
+  },
+  {
+    text: "Ich gebe ___ Kind ein Geschenk.",
+    options: ["dem", "den", "der"],
+    correct: "dem",
+    explanation:
+      "Das Verb 'geben' verlangt den Dativ für das Objekt, daher 'dem Kind'.",
+  },
+  {
+    text: "Das Buch liegt auf ___ Tisch.",
+    options: ["dem", "den", "der"],
+    correct: "dem",
+    explanation:
+      "Das Verb 'liegen' verlangt den Dativ, da es eine Position beschreibt.",
+  },
+  {
+    text: "Ich gehe in ___ Schule.",
+    options: ["die", "der", "das"],
+    correct: "die",
+    explanation:
+      "Das Verb 'gehen in' verlangt den Akkusativ, daher 'die Schule'.",
+  },
+  {
+    text: "Das ist das Fahrrad ___ Jungen.",
+    options: ["des", "der", "dem"],
+    correct: "des",
+    explanation: "Das Genitivobjekt 'des Jungen' zeigt Besitz an.",
+  },
+  {
+    text: "Die Lampe hängt über ___ Tisch.",
+    options: ["dem", "den", "der"],
+    correct: "dem",
+    explanation:
+      "Das Verb 'hängen' im statischen Zustand verlangt den Dativ, daher 'dem Tisch'.",
+  },
+  {
+    text: "Ich stelle die Vase auf ___ Tisch.",
+    options: ["den", "dem", "der"],
+    correct: "den",
+    explanation:
+      "Das Verb 'stellen' (Bewegung) verlangt den Akkusativ, daher 'den Tisch'.",
+  },
+  {
+    text: "Er wartet auf ___ Bus.",
+    options: ["den", "dem", "der"],
+    correct: "den",
+    explanation:
+      "Die Präposition 'auf' mit dem Verb 'warten' verlangt den Akkusativ.",
+  },
+  {
+    text: "Die Schlüssel sind in ___ Tasche.",
+    options: ["der", "die", "den"],
+    correct: "der",
+    explanation:
+      "Die Präposition 'in' zeigt hier eine Position an, daher Dativ 'der Tasche'.",
+  },
+  {
+    text: "Hast du ___ Bleistift gesehen?",
+    options: ["den", "dem", "der"],
+    correct: "den",
+    explanation:
+      "Das Verb 'sehen' verlangt den Akkusativ, daher 'den Bleistift'.",
+  },
+  {
+    text: "Ich freue mich auf ___ Wochenende.",
+    options: ["das", "dem", "den"],
+    correct: "das",
+    explanation:
+      "Die Präposition 'auf' in diesem Zusammenhang verlangt den Akkusativ.",
+  },
+  {
+    text: "Das ist der Freund ___ Schwester.",
+    options: ["der", "den", "des"],
+    correct: "der",
+    explanation: "'Der Schwester' ist im Genitiv, da es den Besitz ausdrückt.",
+  },
+];
+const wortschatz = [
+  {
+    text: "Der Himmel ist ___.",
+    options: ["blau", "rot", "grün"],
+    correct: "blau",
+    explanation:
+      "Der Himmel ist normalerweise blau, außer bei Sonnenauf- oder -untergang.",
+  },
+  {
+    text: "Ein Apfel ist ___.",
+    options: ["rot", "blau", "weiß"],
+    correct: "rot",
+    explanation: "Äpfel sind oft rot, obwohl es auch grüne und gelbe gibt.",
+  },
+  {
+    text: "Das Gegenteil von 'alt' ist ___.",
+    options: ["jung", "klein", "groß"],
+    correct: "jung",
+    explanation: "Das Gegenteil von 'alt' (alt) ist 'jung' (jung).",
+  },
+  {
+    text: "Die Sonne scheint am ___.",
+    options: ["Tag", "Nacht", "Abend"],
+    correct: "Tag",
+    explanation: "Die Sonne scheint nur tagsüber.",
+  },
+  {
+    text: "Ein Tisch ist ___.",
+    options: ["groß", "lang", "kurz"],
+    correct: "groß",
+    explanation: "Tische sind normalerweise groß genug, um daran zu sitzen.",
+  },
+  {
+    text: "Das Gegenteil von 'hell' ist ___.",
+    options: ["dunkel", "leicht", "klar"],
+    correct: "dunkel",
+    explanation: "'Dunkel' ist das Gegenteil von 'hell'.",
+  },
+  {
+    text: "Das Wasser ist ___.",
+    options: ["kalt", "trocken", "hart"],
+    correct: "kalt",
+    explanation: "Wasser ist oft kalt, vor allem in der Natur.",
+  },
+  {
+    text: "Der Baum ist ___.",
+    options: ["grün", "blau", "rot"],
+    correct: "grün",
+    explanation: "Bäume haben grüne Blätter, außer im Herbst.",
+  },
+  {
+    text: "Das Gegenteil von 'schnell' ist ___.",
+    options: ["langsam", "kurz", "leise"],
+    correct: "langsam",
+    explanation: "Langsam bedeutet das Gegenteil von schnell.",
+  },
+  {
+    text: "Milch ist ___.",
+    options: ["weiß", "rot", "gelb"],
+    correct: "weiß",
+    explanation: "Milch ist normalerweise weiß.",
+  },
+  {
+    text: "Das Gegenteil von 'groß' ist ___.",
+    options: ["klein", "kurz", "eng"],
+    correct: "klein",
+    explanation: "'Klein' bedeutet das Gegenteil von 'groß'.",
+  },
+  {
+    text: "Der Hund ist ___.",
+    options: ["schnell", "langsam", "klar"],
+    correct: "schnell",
+    explanation: "Hunde können oft schnell laufen.",
+  },
+  {
+    text: "Der Stuhl ist ___.",
+    options: ["hart", "weich", "lang"],
+    correct: "hart",
+    explanation: "Stühle sind oft hart, damit sie stabil sind.",
+  },
+  {
+    text: "Der Schnee ist ___.",
+    options: ["weiß", "gelb", "grün"],
+    correct: "weiß",
+    explanation: "Schnee ist immer weiß, wenn er frisch ist.",
+  },
+  {
+    text: "Der Sommer ist ___.",
+    options: ["warm", "kalt", "klar"],
+    correct: "warm",
+    explanation: "Der Sommer ist normalerweise warm.",
+  },
+];
 
-export default words;
+export { words, grammatik, wortschatz };

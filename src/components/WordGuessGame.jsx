@@ -8,7 +8,7 @@ import {
   Select,
   Grid,
 } from "@mui/material";
-import words from "../utils/words";
+import { words } from "../utils/words";
 
 const WordGuessGame = () => {
   const [numWords, setNumWords] = useState(10); // Anzahl der Wörter im Spiel
