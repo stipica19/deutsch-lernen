@@ -20,3 +20,70 @@ footer {
   width: 100vw;
   margin-top: auto; /* Footer se automatski gura na dno */
 }
+
+/* Default stilovi za svijetlu temu */
+body,
+html {
+  background-color: #f9f9f9;
+  color: #333;
+
+  margin: 0;
+  padding: 0;
+
+  height: 100%;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+button,
+select,
+input,
+table {
+  background-color: #ffffff;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.card {
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+/* Stilovi za tamnu temu */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+
+  button,
+  select,
+  input,
+  table {
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #555;
+  }
+
+  .card {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
+
+  a {
+    color: #90caf9; /* Plavi linkovi za tamnu temu */
+  }
+
+  /* Dodatni kontrast za alert poruke */
+  .alert-success {
+    background-color: #2e7d32;
+    color: #ffffff;
+  }
+
+  .alert-error {
+    background-color: #d32f2f;
+    color: #ffffff;
+  }
+}

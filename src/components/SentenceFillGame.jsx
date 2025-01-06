@@ -21,7 +21,6 @@ import {
 } from "@mui/material";
 import InfoIcon from "@mui/icons-material/Info";
 
-// Importujemo nove rečenice za Adjektivdeklination
 import {
   artiklundpronomen,
   possessivartikel,
@@ -31,12 +30,12 @@ import {
 const allSentences = {
   artiklundpronomen,
   possessivartikel,
-  adjektivdeklination, // Dodana nova kategorija
+  adjektivdeklination,
 };
 
 function SentenceFillGame() {
-  const [category, setCategory] = useState(""); // Ausgewählte Kategorie
-  const [sentences, setSentences] = useState([]); // Fragen der ausgewählten Kategorie
+  const [category, setCategory] = useState("");
+  const [sentences, setSentences] = useState([]);
   const [currentSentence, setCurrentSentence] = useState(0);
   const [userAnswer, setUserAnswer] = useState("");
   const [feedback, setFeedback] = useState("");
@@ -109,7 +108,7 @@ function SentenceFillGame() {
         maxWidth: 600,
         margin: "auto",
         textAlign: "center",
-        padding: 3,
+        padding: { xs: 2, sm: 3, md: 4 },
       }}
     >
       {!category ? (
@@ -118,7 +117,7 @@ function SentenceFillGame() {
             maxWidth: 600,
             margin: "auto",
             textAlign: "center",
-            padding: 4,
+            padding: { xs: 3, md: 4 },
             boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
             borderRadius: "8px",
             backgroundColor: "#f9f9f9",
@@ -138,8 +137,8 @@ function SentenceFillGame() {
               sx={{
                 backgroundColor: "#1976d2",
                 color: "#fff",
-                padding: "12px 24px",
-                fontSize: "1rem",
+                padding: { xs: "10px 20px", md: "12px 24px" },
+                fontSize: { xs: "0.9rem", md: "1rem" },
                 fontWeight: "bold",
                 textTransform: "uppercase",
                 ":hover": {
@@ -156,8 +155,8 @@ function SentenceFillGame() {
               sx={{
                 backgroundColor: "#9c27b0",
                 color: "#fff",
-                padding: "12px 24px",
-                fontSize: "1rem",
+                padding: { xs: "10px 20px", md: "12px 24px" },
+                fontSize: { xs: "0.9rem", md: "1rem" },
                 fontWeight: "bold",
                 textTransform: "uppercase",
                 ":hover": {
@@ -174,8 +173,8 @@ function SentenceFillGame() {
               sx={{
                 backgroundColor: "#388e3c",
                 color: "#fff",
-                padding: "12px 24px",
-                fontSize: "1rem",
+                padding: { xs: "10px 20px", md: "12px 24px" },
+                fontSize: { xs: "0.9rem", md: "1rem" },
                 fontWeight: "bold",
                 textTransform: "uppercase",
                 ":hover": {
@@ -194,7 +193,6 @@ function SentenceFillGame() {
             Quiz beendet! Dein Ergebnis: {score} / {sentences.length}
           </Typography>
 
-          {/* Tabelle mit den Ergebnissen */}
           <TableContainer component={Paper} sx={{ marginTop: 2 }}>
             <Table>
               <TableHead>
@@ -222,7 +220,11 @@ function SentenceFillGame() {
             variant="contained"
             color="primary"
             onClick={handleRestart}
-            sx={{ marginTop: 2 }}
+            sx={{
+              marginTop: 2,
+              padding: { xs: "8px 16px", md: "10px 20px" },
+              fontSize: { xs: "0.8rem", md: "1rem" },
+            }}
           >
             Quiz erneut starten
           </Button>
@@ -233,7 +235,7 @@ function SentenceFillGame() {
             maxWidth: 600,
             margin: "auto",
             textAlign: "center",
-            padding: 4,
+            padding: { xs: 3, md: 4 },
             boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
             borderRadius: "8px",
             backgroundColor: "#f9f9f9",
@@ -250,7 +252,11 @@ function SentenceFillGame() {
           <Typography
             variant="h6"
             gutterBottom
-            sx={{ mb: 3, fontSize: "1.2rem", color: "#555" }}
+            sx={{
+              mb: 3,
+              fontSize: { xs: "1rem", md: "1.2rem" },
+              color: "#555",
+            }}
           >
             Aktuelles Ergebnis: {score} / {sentences.length}
           </Typography>
@@ -260,7 +266,7 @@ function SentenceFillGame() {
             gutterBottom
             sx={{
               mb: 3,
-              fontSize: "1.5rem",
+              fontSize: { xs: "1rem", md: "1.5rem" },
               fontWeight: "bold",
               backgroundColor: "#e3f2fd",
               padding: "10px",
@@ -284,7 +290,7 @@ function SentenceFillGame() {
                   sx={{
                     mb: 1,
                     ".MuiFormControlLabel-label": {
-                      fontSize: "1rem",
+                      fontSize: { xs: "0.9rem", md: "1rem" },
                     },
                   }}
                 />
@@ -316,7 +322,6 @@ function SentenceFillGame() {
             </Button>
           </Box>
 
-          {/* Feedback */}
           {feedback && (
             <Alert
               severity={feedback.includes("Richtige") ? "success" : "error"}
@@ -326,7 +331,6 @@ function SentenceFillGame() {
             </Alert>
           )}
 
-          {/* Erklärung */}
           {explanation && (
             <Card
               sx={{
@@ -340,7 +344,7 @@ function SentenceFillGame() {
                 <Typography
                   variant="body1"
                   sx={{
-                    fontSize: "1rem",
+                    fontSize: { xs: "0.9rem", md: "1rem" },
                     display: "flex",
                     alignItems: "center",
                   }}
