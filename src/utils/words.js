@@ -380,201 +380,223 @@ const words = [
   { word: "Zielgruppe", gender: "die" },
   { word: "Zwilling", gender: "der" },
 ];
-const grammatik = [
+const artiklundpronomen = [
   {
-    text: "Das ist ___ Auto.",
-    options: ["ein", "eine", "einen"],
-    correct: "ein",
+    text: "___ Buch liegt auf dem Tisch.",
+    options: ["Das", "Der", "Die"],
+    correct: "Das",
     explanation:
-      "Das Wort 'Auto' ist neutral, daher benutzt man 'ein' im Nominativ.",
+      "Das Substantiv 'Buch' ist neutral, daher benutzt man den Artikel 'Das'.",
   },
   {
-    text: "Der Hund gehört ___ Mann.",
-    options: ["dem", "den", "der"],
-    correct: "dem",
-    explanation: "Das Verb 'gehören' verlangt den Dativ, daher 'dem Mann'.",
-  },
-  {
-    text: "Ich sehe ___ Katze.",
-    options: ["die", "der", "den"],
-    correct: "die",
-    explanation: "Das Verb 'sehen' verlangt den Akkusativ, daher 'die Katze'.",
-  },
-  {
-    text: "Wir sprechen über ___ Film.",
-    options: ["den", "dem", "der"],
+    text: "Ich sehe ___ Mann im Park.",
+    options: ["den", "die", "das"],
     correct: "den",
+    explanation: "Im Akkusativ wird der Artikel für Maskulinum zu 'den'.",
+  },
+  {
+    text: "___ Frau trinkt Kaffee.",
+    options: ["Die", "Der", "Das"],
+    correct: "Die",
     explanation:
-      "Die Präposition 'über' verlangt den Akkusativ, daher 'den Film'.",
+      "Das Substantiv 'Frau' ist feminin, daher benutzt man den Artikel 'Die'.",
   },
   {
-    text: "Ich gebe ___ Kind ein Geschenk.",
-    options: ["dem", "den", "der"],
-    correct: "dem",
-    explanation:
-      "Das Verb 'geben' verlangt den Dativ für das Objekt, daher 'dem Kind'.",
+    text: "___ ist mein Bruder.",
+    options: ["Sie", "Er", "Es"],
+    correct: "Er",
+    explanation: "Für Maskulinum im Nominativ benutzt man das Pronomen 'Er'.",
   },
   {
-    text: "Das Buch liegt auf ___ Tisch.",
-    options: ["dem", "den", "der"],
-    correct: "dem",
-    explanation:
-      "Das Verb 'liegen' verlangt den Dativ, da es eine Position beschreibt.",
+    text: "Ich gebe ___ das Buch.",
+    options: ["ihm", "ihr", "es"],
+    correct: "ihm",
+    explanation: "Im Dativ benutzt man 'ihm' für Maskulinum oder Neutrum.",
   },
   {
-    text: "Ich gehe in ___ Schule.",
-    options: ["die", "der", "das"],
-    correct: "die",
-    explanation:
-      "Das Verb 'gehen in' verlangt den Akkusativ, daher 'die Schule'.",
-  },
-  {
-    text: "Das ist das Fahrrad ___ Jungen.",
-    options: ["des", "der", "dem"],
-    correct: "des",
-    explanation: "Das Genitivobjekt 'des Jungen' zeigt Besitz an.",
-  },
-  {
-    text: "Die Lampe hängt über ___ Tisch.",
-    options: ["dem", "den", "der"],
-    correct: "dem",
-    explanation:
-      "Das Verb 'hängen' im statischen Zustand verlangt den Dativ, daher 'dem Tisch'.",
-  },
-  {
-    text: "Ich stelle die Vase auf ___ Tisch.",
-    options: ["den", "dem", "der"],
-    correct: "den",
-    explanation:
-      "Das Verb 'stellen' (Bewegung) verlangt den Akkusativ, daher 'den Tisch'.",
-  },
-  {
-    text: "Er wartet auf ___ Bus.",
-    options: ["den", "dem", "der"],
-    correct: "den",
-    explanation:
-      "Die Präposition 'auf' mit dem Verb 'warten' verlangt den Akkusativ.",
-  },
-  {
-    text: "Die Schlüssel sind in ___ Tasche.",
-    options: ["der", "die", "den"],
-    correct: "der",
-    explanation:
-      "Die Präposition 'in' zeigt hier eine Position an, daher Dativ 'der Tasche'.",
-  },
-  {
-    text: "Hast du ___ Bleistift gesehen?",
-    options: ["den", "dem", "der"],
-    correct: "den",
-    explanation:
-      "Das Verb 'sehen' verlangt den Akkusativ, daher 'den Bleistift'.",
-  },
-  {
-    text: "Ich freue mich auf ___ Wochenende.",
-    options: ["das", "dem", "den"],
-    correct: "das",
-    explanation:
-      "Die Präposition 'auf' in diesem Zusammenhang verlangt den Akkusativ.",
-  },
-  {
-    text: "Das ist der Freund ___ Schwester.",
-    options: ["der", "den", "des"],
-    correct: "der",
-    explanation: "'Der Schwester' ist im Genitiv, da es den Besitz ausdrückt.",
-  },
-];
-const wortschatz = [
-  {
-    text: "Der Himmel ist ___.",
-    options: ["blau", "rot", "grün"],
-    correct: "blau",
-    explanation:
-      "Der Himmel ist normalerweise blau, außer bei Sonnenauf- oder -untergang.",
-  },
-  {
-    text: "Ein Apfel ist ___.",
-    options: ["rot", "blau", "weiß"],
-    correct: "rot",
-    explanation: "Äpfel sind oft rot, obwohl es auch grüne und gelbe gibt.",
-  },
-  {
-    text: "Das Gegenteil von 'alt' ist ___.",
-    options: ["jung", "klein", "groß"],
-    correct: "jung",
-    explanation: "Das Gegenteil von 'alt' (alt) ist 'jung' (jung).",
-  },
-  {
-    text: "Die Sonne scheint am ___.",
-    options: ["Tag", "Nacht", "Abend"],
-    correct: "Tag",
-    explanation: "Die Sonne scheint nur tagsüber.",
-  },
-  {
-    text: "Ein Tisch ist ___.",
-    options: ["groß", "lang", "kurz"],
-    correct: "groß",
-    explanation: "Tische sind normalerweise groß genug, um daran zu sitzen.",
-  },
-  {
-    text: "Das Gegenteil von 'hell' ist ___.",
-    options: ["dunkel", "leicht", "klar"],
-    correct: "dunkel",
-    explanation: "'Dunkel' ist das Gegenteil von 'hell'.",
-  },
-  {
-    text: "Das Wasser ist ___.",
-    options: ["kalt", "trocken", "hart"],
-    correct: "kalt",
-    explanation: "Wasser ist oft kalt, vor allem in der Natur.",
-  },
-  {
-    text: "Der Baum ist ___.",
-    options: ["grün", "blau", "rot"],
-    correct: "grün",
-    explanation: "Bäume haben grüne Blätter, außer im Herbst.",
-  },
-  {
-    text: "Das Gegenteil von 'schnell' ist ___.",
-    options: ["langsam", "kurz", "leise"],
-    correct: "langsam",
-    explanation: "Langsam bedeutet das Gegenteil von schnell.",
-  },
-  {
-    text: "Milch ist ___.",
-    options: ["weiß", "rot", "gelb"],
-    correct: "weiß",
-    explanation: "Milch ist normalerweise weiß.",
-  },
-  {
-    text: "Das Gegenteil von 'groß' ist ___.",
-    options: ["klein", "kurz", "eng"],
-    correct: "klein",
-    explanation: "'Klein' bedeutet das Gegenteil von 'groß'.",
-  },
-  {
-    text: "Der Hund ist ___.",
-    options: ["schnell", "langsam", "klar"],
-    correct: "schnell",
-    explanation: "Hunde können oft schnell laufen.",
-  },
-  {
-    text: "Der Stuhl ist ___.",
-    options: ["hart", "weich", "lang"],
-    correct: "hart",
-    explanation: "Stühle sind oft hart, damit sie stabil sind.",
-  },
-  {
-    text: "Der Schnee ist ___.",
-    options: ["weiß", "gelb", "grün"],
-    correct: "weiß",
-    explanation: "Schnee ist immer weiß, wenn er frisch ist.",
-  },
-  {
-    text: "Der Sommer ist ___.",
-    options: ["warm", "kalt", "klar"],
-    correct: "warm",
-    explanation: "Der Sommer ist normalerweise warm.",
+    text: "___ geht in die Schule.",
+    options: ["Sie", "Ich", "Du"],
+    correct: "Sie",
+    explanation: "Für Femininum im Nominativ benutzt man das Pronomen 'Sie'.",
   },
 ];
 
-export { words, grammatik, wortschatz };
+const adjektivdeklination = [
+  {
+    text: "Der ___ Hund ist sehr freundlich.",
+    options: ["große", "großer", "großem"],
+    correct: "große",
+    explanation:
+      "Im Nominativ hat das Adjektiv die Endung -e nach dem bestimmten Artikel 'der'.",
+  },
+  {
+    text: "Ich habe einen ___ Mantel gekauft.",
+    options: ["neuen", "neuer", "neuem"],
+    correct: "neuen",
+    explanation:
+      "Im Akkusativ hat das Adjektiv die Endung -en nach dem bestimmten Artikel 'einen'.",
+  },
+  {
+    text: "Wir helfen dem ___ Kind bei den Hausaufgaben.",
+    options: ["kleine", "kleinen", "kleinem"],
+    correct: "kleinen",
+    explanation:
+      "Im Dativ hat das Adjektiv die Endung -en nach dem bestimmten Artikel 'dem'.",
+  },
+  {
+    text: "Die ___ Katze schläft auf dem Sofa.",
+    options: ["schwarz", "schwarze", "schwarzen"],
+    correct: "schwarze",
+    explanation:
+      "Im Nominativ hat das Adjektiv die Endung -e nach dem bestimmten Artikel 'die'.",
+  },
+  {
+    text: "Ich sehe eine ___ Blume im Garten.",
+    options: ["schöne", "schöner", "schönem"],
+    correct: "schöne",
+    explanation:
+      "Im Akkusativ hat das Adjektiv die Endung -e nach dem bestimmten Artikel 'eine'.",
+  },
+  {
+    text: "Wir danken unserem ___ Lehrer für die Hilfe.",
+    options: ["netten", "nettem", "netter"],
+    correct: "netten",
+    explanation:
+      "Im Dativ hat das Adjektiv die Endung -en nach dem Possessivartikel 'unserem'.",
+  },
+  {
+    text: "Das ist ein ___ Auto.",
+    options: ["schnelles", "schnellem", "schneller"],
+    correct: "schnelles",
+    explanation:
+      "Im Nominativ hat das Adjektiv die Endung -es nach dem unbestimmten Artikel 'ein' für neutrale Substantive.",
+  },
+  {
+    text: "Er hat ein ___ Buch gelesen.",
+    options: ["interessantes", "interessantem", "interessanter"],
+    correct: "interessantes",
+    explanation:
+      "Im Akkusativ hat das Adjektiv die Endung -es nach dem unbestimmten Artikel 'ein' für neutrale Substantive.",
+  },
+  {
+    text: "Ich spreche mit einer ___ Frau.",
+    options: ["klugen", "kluger", "kluge"],
+    correct: "klugen",
+    explanation:
+      "Im Dativ hat das Adjektiv die Endung -en nach dem unbestimmten Artikel 'einer'.",
+  },
+  {
+    text: "Die ___ Kinder spielen im Park.",
+    options: ["fröhlich", "fröhliche", "fröhlichen"],
+    correct: "fröhlichen",
+    explanation:
+      "Im Nominativ Plural hat das Adjektiv die Endung -en nach dem bestimmten Artikel 'die'.",
+  },
+  {
+    text: "Ich sehe die ___ Bücher auf dem Tisch.",
+    options: ["neue", "neuen", "neuem"],
+    correct: "neuen",
+    explanation:
+      "Im Akkusativ Plural hat das Adjektiv die Endung -en nach dem bestimmten Artikel 'die'.",
+  },
+  {
+    text: "Wir geben den ___ Schülern die Aufgaben.",
+    options: ["fleißigen", "fleißiger", "fleißigem"],
+    correct: "fleißigen",
+    explanation:
+      "Im Dativ Plural hat das Adjektiv die Endung -en nach dem bestimmten Artikel 'den'.",
+  },
+  {
+    text: "Das ist eine ___ Entscheidung.",
+    options: ["schwierige", "schwieriger", "schwierigem"],
+    correct: "schwierige",
+    explanation:
+      "Im Nominativ hat das Adjektiv die Endung -e nach dem unbestimmten Artikel 'eine'.",
+  },
+  {
+    text: "Er kauft ein ___ Hemd.",
+    options: ["weißes", "weißem", "weißer"],
+    correct: "weißes",
+    explanation:
+      "Im Akkusativ hat das Adjektiv die Endung -es nach dem unbestimmten Artikel 'ein' für neutrale Substantive.",
+  },
+  {
+    text: "Ich schenke meinem ___ Freund ein Buch.",
+    options: ["besten", "bester", "bestem"],
+    correct: "besten",
+    explanation:
+      "Im Dativ hat das Adjektiv die Endung -en nach dem Possessivartikel 'meinem'.",
+  },
+];
+
+const possessivartikel = [
+  // Nominativ Beispiele
+  {
+    text: "Das ist ___ Auto.",
+    options: ["meine", "mein", "meinen"],
+    correct: "mein",
+    explanation:
+      "Im Nominativ steht 'mein' vor neutralen Substantiven wie 'Auto'.",
+  },
+  {
+    text: "___ Vater ist sehr nett.",
+    options: ["Deinen", "Deine", "Dein"],
+    correct: "Dein",
+    explanation:
+      "Im Nominativ steht 'Dein' vor maskulinen Substantiven wie 'Vater'.",
+  },
+  {
+    text: "___ Schwester studiert in Berlin.",
+    options: ["Sein", "Seine", "Seinen"],
+    correct: "Seine",
+    explanation:
+      "Im Nominativ steht 'Seine' vor femininen Substantiven wie 'Schwester'.",
+  },
+
+  // Akkusativ Beispiele
+  {
+    text: "Ich sehe ___ Freund im Kino.",
+    options: ["meinen", "mein", "meine"],
+    correct: "meinen",
+    explanation:
+      "Im Akkusativ wird 'mein' zu 'meinen' bei maskulinen Substantiven wie 'Freund'.",
+  },
+  {
+    text: "Er hat ___ Buch vergessen.",
+    options: ["sein", "seine", "seinen"],
+    correct: "sein",
+    explanation:
+      "Im Akkusativ bleibt 'sein' unverändert bei neutralen Substantiven wie 'Buch'.",
+  },
+  {
+    text: "Wir besuchen ___ Großeltern.",
+    options: ["unsere", "unser", "unseren"],
+    correct: "unsere",
+    explanation:
+      "Im Akkusativ bleibt 'unsere' unverändert bei Pluralformen wie 'Großeltern'.",
+  },
+
+  // Dativ Beispiele
+  {
+    text: "Ich gebe ___ Bruder das Buch.",
+    options: ["meinem", "mein", "meinen"],
+    correct: "meinem",
+    explanation:
+      "Im Dativ steht 'meinem' vor maskulinen Substantiven wie 'Bruder'.",
+  },
+  {
+    text: "Er hilft ___ Schwester bei den Hausaufgaben.",
+    options: ["seinem", "seiner", "seine"],
+    correct: "seiner",
+    explanation:
+      "Im Dativ steht 'seiner' vor femininen Substantiven wie 'Schwester'.",
+  },
+  {
+    text: "Wir sprechen mit ___ Freunden.",
+    options: ["unseren", "unser", "unsere"],
+    correct: "unseren",
+    explanation: "Im Dativ steht 'unseren' vor Pluralformen wie 'Freunden'.",
+  },
+];
+
+export { words, artiklundpronomen, possessivartikel, adjektivdeklination };

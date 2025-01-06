@@ -1,122 +1,141 @@
 import React from "react";
-import { Grid, Card, CardContent, Typography } from "@mui/material";
+import { Grid, Card, CardContent, Typography, Box } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
-    <Grid container spacing={3} sx={{ mt: 4, px: 2 }}>
-      <Grid item xs={12}>
-        <Typography variant="h4" align="center" gutterBottom>
-          Willkommen in der Deutschlern-App!
-        </Typography>
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <Card>
-          <CardContent>
-            <Typography variant="h5" align="center">
-              Artikel erraten
-            </Typography>
-            <Typography variant="body2" align="center" sx={{ mt: 2 }}>
-              Testen Sie Ihr Wissen über die Artikel von Substantiven.
-            </Typography>
-            <Link
-              to="/game/gender"
-              style={{
-                textDecoration: "none",
-                display: "block",
-                marginTop: "16px",
-                textAlign: "center",
-              }}
-            >
+    <Box
+      sx={{
+        maxWidth: 900,
+        margin: "auto",
+        padding: 3,
+      }}
+    >
+      <Typography
+        variant="h4"
+        align="center"
+        gutterBottom
+        sx={{ fontWeight: "bold", mb: 4 }}
+      >
+        Willkommen in der Deutschlern-App!
+      </Typography>
+
+      <Grid container spacing={3}>
+        <Grid item xs={12} sm={6}>
+          <Card
+            sx={{
+              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+              borderRadius: "8px",
+
+              height: "100%", //ista visinadisplay: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              padding: 2,
+            }}
+          >
+            <CardContent>
               <Typography
-                variant="button"
-                sx={{
-                  display: "inline-block",
-                  padding: "8px 16px",
-                  backgroundColor: "primary.main",
-                  color: "white",
-                  borderRadius: "4px",
-                  ":hover": {
-                    backgroundColor: "primary.dark",
-                  },
+                variant="h5"
+                align="center"
+                sx={{ fontWeight: "bold" }}
+              >
+                Artikel erraten
+              </Typography>
+              <Typography
+                variant="body2"
+                align="center"
+                sx={{ mt: 2, color: "text.secondary" }}
+              >
+                Testen Sie Ihr Wissen über die Artikel von Substantiven.
+              </Typography>
+              <Link
+                to="/game/gender"
+                style={{
+                  textDecoration: "none",
+                  display: "block",
+                  marginTop: "16px",
+                  textAlign: "center",
                 }}
               >
-                Starten
-              </Typography>
-            </Link>
-          </CardContent>
-        </Card>
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <Card>
-          <CardContent>
-            <Typography variant="h5" align="center">
-              Mix
-            </Typography>
-            <Typography variant="body2" align="center" sx={{ mt: 2 }}>
-              Üben Sie den richtigen Satzbau.
-            </Typography>
-            <Link
-              to="/game/sentences"
-              style={{
-                textDecoration: "none",
-                display: "block",
-                marginTop: "16px",
-                textAlign: "center",
-              }}
-            >
+                <Typography
+                  variant="button"
+                  sx={{
+                    display: "inline-block",
+                    padding: "10px 20px",
+                    backgroundColor: "#1976d2",
+                    color: "white",
+                    borderRadius: "4px",
+                    fontWeight: "bold",
+                    ":hover": {
+                      backgroundColor: "#1565c0",
+                    },
+                  }}
+                >
+                  Starten
+                </Typography>
+              </Link>
+            </CardContent>
+          </Card>
+        </Grid>
+
+        <Grid item xs={12} sm={6}>
+          <Card
+            sx={{
+              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+              borderRadius: "8px",
+              height: "100%", // Osigurava iste visine
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              padding: 2,
+            }}
+          >
+            <CardContent>
               <Typography
-                variant="button"
-                sx={{
-                  display: "inline-block",
-                  padding: "8px 16px",
-                  backgroundColor: "primary.main",
-                  color: "white",
-                  borderRadius: "4px",
+                variant="h5"
+                align="center"
+                sx={{ fontWeight: "bold" }}
+              >
+                Mix
+              </Typography>
+              <Typography
+                variant="body2"
+                align="center"
+                sx={{ mt: 2, color: "text.secondary" }}
+              >
+                Üben Sie den richtigen Satzbau.
+              </Typography>
+              <Link
+                to="/game/sentences"
+                style={{
+                  textDecoration: "none",
+                  display: "block",
+                  marginTop: "16px",
+                  textAlign: "center",
                 }}
               >
-                Starten
-              </Typography>
-            </Link>
-          </CardContent>
-        </Card>
+                <Typography
+                  variant="button"
+                  sx={{
+                    display: "inline-block",
+                    padding: "10px 20px",
+                    backgroundColor: "#1976d2",
+                    color: "white",
+                    borderRadius: "4px",
+                    fontWeight: "bold",
+                    ":hover": {
+                      backgroundColor: "#1565c0",
+                    },
+                  }}
+                >
+                  Starten
+                </Typography>
+              </Link>
+            </CardContent>
+          </Card>
+        </Grid>
       </Grid>
-      <Grid item xs={12} sm={4}>
-        <Card>
-          <CardContent>
-            <Typography variant="h5" align="center">
-              Possessivpronomen (deaktiviert)
-            </Typography>
-            <Typography variant="body2" align="center" sx={{ mt: 2 }}>
-              Üben Sie die korrekte Verwendung von Possessivpronomen. (Derzeit
-              nicht verfügbar)
-            </Typography>
-            <div
-              style={{
-                textDecoration: "none",
-                display: "block",
-                marginTop: "16px",
-                textAlign: "center",
-              }}
-            >
-              <Typography
-                variant="button"
-                sx={{
-                  display: "inline-block",
-                  padding: "8px 16px",
-                  backgroundColor: "grey",
-                  color: "white",
-                  borderRadius: "4px",
-                  cursor: "not-allowed",
-                }}
-              >
-                Deaktiviert
-              </Typography>
-            </div>
-          </CardContent>
-        </Card>
-      </Grid>
-    </Grid>
+    </Box>
   );
 };
 

@@ -1,4 +1,3 @@
-// Datei: src/App.js
 import React, { useState } from "react";
 import {
   Box,
@@ -22,11 +21,17 @@ import {
 } from "@mui/material";
 import InfoIcon from "@mui/icons-material/Info";
 
-import { grammatik, wortschatz } from "../utils/words";
+// Importujemo nove rečenice za Adjektivdeklination
+import {
+  artiklundpronomen,
+  possessivartikel,
+  adjektivdeklination,
+} from "../utils/words";
 
 const allSentences = {
-  grammatik,
-  wortschatz,
+  artiklundpronomen,
+  possessivartikel,
+  adjektivdeklination, // Dodana nova kategorija
 };
 
 function SentenceFillGame() {
@@ -107,31 +112,81 @@ function SentenceFillGame() {
         padding: 3,
       }}
     >
-      <Typography variant="h4" gutterBottom>
-        Lückentext-Übungen
-      </Typography>
-
       {!category ? (
-        <Box>
-          <Typography variant="h5" gutterBottom>
+        <Box
+          sx={{
+            maxWidth: 600,
+            margin: "auto",
+            textAlign: "center",
+            padding: 4,
+            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+            borderRadius: "8px",
+            backgroundColor: "#f9f9f9",
+          }}
+        >
+          <Typography
+            variant="h5"
+            gutterBottom
+            sx={{ fontWeight: "bold", marginBottom: 3 }}
+          >
             Wähle eine Kategorie:
           </Typography>
-          <Button
-            variant="contained"
-            color="primary"
-            sx={{ margin: 1 }}
-            onClick={() => handleCategorySelect("grammatik")}
-          >
-            Grammatik
-          </Button>
-          <Button
-            variant="contained"
-            color="secondary"
-            sx={{ margin: 1 }}
-            onClick={() => handleCategorySelect("wortschatz")}
-          >
-            Wortschatz
-          </Button>
+
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "#1976d2",
+                color: "#fff",
+                padding: "12px 24px",
+                fontSize: "1rem",
+                fontWeight: "bold",
+                textTransform: "uppercase",
+                ":hover": {
+                  backgroundColor: "#1565c0",
+                },
+              }}
+              onClick={() => handleCategorySelect("artiklundpronomen")}
+            >
+              Artikelwörter und Pronomen
+            </Button>
+
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "#9c27b0",
+                color: "#fff",
+                padding: "12px 24px",
+                fontSize: "1rem",
+                fontWeight: "bold",
+                textTransform: "uppercase",
+                ":hover": {
+                  backgroundColor: "#7b1fa2",
+                },
+              }}
+              onClick={() => handleCategorySelect("possessivartikel")}
+            >
+              Possessivartikel
+            </Button>
+
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "#388e3c",
+                color: "#fff",
+                padding: "12px 24px",
+                fontSize: "1rem",
+                fontWeight: "bold",
+                textTransform: "uppercase",
+                ":hover": {
+                  backgroundColor: "#2e7d32",
+                },
+              }}
+              onClick={() => handleCategorySelect("adjektivdeklination")}
+            >
+              Adjektivdeklination
+            </Button>
+          </Box>
         </Box>
       ) : isQuizFinished ? (
         <Box>
@@ -173,17 +228,49 @@ function SentenceFillGame() {
           </Button>
         </Box>
       ) : (
-        <Box>
-          <Typography variant="h6" gutterBottom>
+        <Box
+          sx={{
+            maxWidth: 600,
+            margin: "auto",
+            textAlign: "center",
+            padding: 4,
+            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+            borderRadius: "8px",
+            backgroundColor: "#f9f9f9",
+          }}
+        >
+          <Typography
+            variant="h4"
+            gutterBottom
+            sx={{ fontWeight: "bold", color: "#1976d2" }}
+          >
+            Lückentext-Übungen
+          </Typography>
+
+          <Typography
+            variant="h6"
+            gutterBottom
+            sx={{ mb: 3, fontSize: "1.2rem", color: "#555" }}
+          >
             Aktuelles Ergebnis: {score} / {sentences.length}
           </Typography>
 
-          <Typography variant="h6" gutterBottom>
+          <Typography
+            variant="h6"
+            gutterBottom
+            sx={{
+              mb: 3,
+              fontSize: "1.5rem",
+              fontWeight: "bold",
+              backgroundColor: "#e3f2fd",
+              padding: "10px",
+              borderRadius: "5px",
+            }}
+          >
             {sentences[currentSentence].text.replace("___", "______")}
           </Typography>
 
-          {/* Antwortmöglichkeiten */}
-          <FormControl component="fieldset">
+          <FormControl component="fieldset" sx={{ mt: 4 }}>
             <RadioGroup
               value={userAnswer}
               onChange={(e) => setUserAnswer(e.target.value)}
@@ -194,35 +281,46 @@ function SentenceFillGame() {
                   value={option}
                   control={<Radio />}
                   label={option}
+                  sx={{
+                    mb: 1,
+                    ".MuiFormControlLabel-label": {
+                      fontSize: "1rem",
+                    },
+                  }}
                 />
               ))}
             </RadioGroup>
           </FormControl>
 
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleSubmit}
-            sx={{ marginRight: 1 }}
-            disabled={!userAnswer}
+          <Box
+            sx={{ mt: 4, display: "flex", justifyContent: "center", gap: 2 }}
           >
-            Überprüfen
-          </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleSubmit}
+              disabled={!userAnswer}
+              sx={{ px: 3, py: 1 }}
+            >
+              Überprüfen
+            </Button>
 
-          <Button
-            variant="outlined"
-            color="secondary"
-            onClick={handleNext}
-            disabled={!feedback}
-          >
-            Nächste Frage
-          </Button>
+            <Button
+              variant="outlined"
+              color="secondary"
+              onClick={handleNext}
+              disabled={!feedback}
+              sx={{ px: 3, py: 1 }}
+            >
+              Nächste Frage
+            </Button>
+          </Box>
 
           {/* Feedback */}
           {feedback && (
             <Alert
               severity={feedback.includes("Richtige") ? "success" : "error"}
-              sx={{ marginTop: 3 }}
+              sx={{ mt: 3, fontSize: "1rem" }}
             >
               {feedback}
             </Alert>
@@ -230,10 +328,24 @@ function SentenceFillGame() {
 
           {/* Erklärung */}
           {explanation && (
-            <Card sx={{ marginTop: 3 }}>
+            <Card
+              sx={{
+                mt: 3,
+                backgroundColor: "#fff8e1",
+                padding: 2,
+                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+              }}
+            >
               <CardContent>
-                <Typography variant="body1">
-                  <InfoIcon sx={{ marginRight: 1 }} />
+                <Typography
+                  variant="body1"
+                  sx={{
+                    fontSize: "1rem",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <InfoIcon sx={{ marginRight: 1, color: "#ffa000" }} />
                   {explanation}
                 </Typography>
               </CardContent>

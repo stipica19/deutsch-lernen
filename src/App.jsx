@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import GamePage from "./pages/GamePage";
 import StatsPage from "./pages/StatsPage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
           </Routes>
         </main>
       </Router>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }
