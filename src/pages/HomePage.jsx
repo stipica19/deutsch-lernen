@@ -30,7 +30,7 @@ const HomePage = () => {
               height: "100%", //ista visinadisplay: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
-              padding: 2,
+              padding: 1,
             }}
           >
             <CardContent>
@@ -87,7 +87,7 @@ const HomePage = () => {
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
-              padding: 2,
+              padding: 1,
             }}
           >
             <CardContent>
