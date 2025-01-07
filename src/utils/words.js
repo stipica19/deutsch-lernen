@@ -599,4 +599,156 @@ const possessivartikel = [
   },
 ];
 
-export { words, artiklundpronomen, possessivartikel, adjektivdeklination };
+const kleidung = [
+  {
+    text: "Ich trage heute eine ___ Jacke.",
+    options: ["roten", "rote", "rotem"],
+    correct: "rote",
+    explanation: "Die Jacke ist feminin, daher braucht man 'rote'.",
+  },
+  {
+    text: "Er hat einen ___ Hut gekauft.",
+    options: ["neuen", "neuer", "neuem"],
+    correct: "neuen",
+    explanation: "Der Hut ist maskulin und Akkusativ, daher 'neuen'.",
+  },
+  {
+    text: "Die Schuhe passen zu seinem ___ Hemd.",
+    options: ["blauen", "blauem", "blauer"],
+    correct: "blauen",
+    explanation: "Das Hemd ist neutral und Dativ, daher 'blauen'.",
+  },
+  {
+    text: "Sie trägt eine ___ Bluse.",
+    options: ["schöner", "schöne", "schönen"],
+    correct: "schöne",
+    explanation: "Die Bluse ist feminin, daher 'schöne'.",
+  },
+  {
+    text: "Ich habe einen ___ Mantel an.",
+    options: ["langen", "langer", "langem"],
+    correct: "langen",
+    explanation: "Der Mantel ist maskulin und Akkusativ, daher 'langen'.",
+  },
+  {
+    text: "Das Kind trägt ein ___ T-Shirt.",
+    options: ["grünes", "grüner", "grünem"],
+    correct: "grünes",
+    explanation: "Das T-Shirt ist neutral, daher 'grünes'.",
+  },
+  {
+    text: "Die Hose ist zu ___ für mich.",
+    options: ["eng", "enge", "engem"],
+    correct: "eng",
+    explanation: "Die Hose ist feminin, daher 'eng'.",
+  },
+  {
+    text: "Ich kaufe mir einen ___ Schal.",
+    options: ["warmen", "warmer", "warmem"],
+    correct: "warmen",
+    explanation: "Der Schal ist maskulin und Akkusativ, daher 'warmen'.",
+  },
+  {
+    text: "Er trägt ein ___ Hemd zur Arbeit.",
+    options: ["weißes", "weißer", "weißem"],
+    correct: "weißes",
+    explanation: "Das Hemd ist neutral, daher 'weißes'.",
+  },
+  {
+    text: "Sie hat eine ___ Mütze gekauft.",
+    options: ["neue", "neuen", "neuem"],
+    correct: "neue",
+    explanation: "Die Mütze ist feminin, daher 'neue'.",
+  },
+  {
+    text: "Meine Mutter strickt einen ___ Pullover.",
+    options: ["dicken", "dickem", "dicker"],
+    correct: "dicken",
+    explanation: "Der Pullover ist maskulin und Akkusativ, daher 'dicken'.",
+  },
+  {
+    text: "Das Kleid sieht in ___ Farbe besser aus.",
+    options: ["dieser", "diese", "diesem"],
+    correct: "dieser",
+    explanation: "Die Farbe ist feminin, daher 'dieser'.",
+  },
+  {
+    text: "Ich brauche eine ___ Tasche für die Reise.",
+    options: ["große", "großer", "großem"],
+    correct: "große",
+    explanation: "Die Tasche ist feminin, daher 'große'.",
+  },
+  {
+    text: "Wir haben ein ___ Angebot für Schuhe gefunden.",
+    options: ["tolles", "toller", "tollem"],
+    correct: "tolles",
+    explanation: "Das Angebot ist neutral, daher 'tolles'.",
+  },
+  {
+    text: "Der Verkäufer hat einen ___ Anzug empfohlen.",
+    options: ["schwarzen", "schwarzer", "schwarzem"],
+    correct: "schwarzen",
+    explanation: "Der Anzug ist maskulin und Akkusativ, daher 'schwarzen'.",
+  },
+  {
+    text: "Die Handschuhe sind aus ___ Leder gefertigt.",
+    options: ["feinem", "feiner", "feinen"],
+    correct: "feinem",
+    explanation: "Das Leder ist neutral und Dativ, daher 'feinem'.",
+  },
+  {
+    text: "Sie trägt ___ Ohrringe aus Gold.",
+    options: ["schöne", "schöner", "schönem"],
+    correct: "schöne",
+    explanation: "Die Ohrringe sind Plural, daher 'schöne'.",
+  },
+  {
+    text: "Ich habe einen ___ Gürtel gekauft.",
+    options: ["neuen", "neuer", "neuem"],
+    correct: "neuen",
+    explanation: "Der Gürtel ist maskulin und Akkusativ, daher 'neuen'.",
+  },
+  {
+    text: "Die Bluse passt gut zu ihrem ___ Rock.",
+    options: ["schwarzen", "schwarzer", "schwarzem"],
+    correct: "schwarzen",
+    explanation: "Der Rock ist maskulin i Dativ, zato koristimo 'schwarzen'.",
+  },
+  {
+    text: "Für die Party wählte sie ein ___ Kleid.",
+    options: ["rotes", "roter", "rotem"],
+    correct: "rotes",
+    explanation: "Kleid je neutralno, u akuzativu koristimo 'rotes'.",
+  },
+];
+const kleidungWords = [
+  { word: "Jacke", gender: "die" },
+  { word: "Hut", gender: "der" },
+  { word: "Hemd", gender: "das" },
+  { word: "Bluse", gender: "die" },
+  { word: "Mantel", gender: "der" },
+  { word: "T-Shirt", gender: "das" },
+  { word: "Hose", gender: "die" },
+  { word: "Schal", gender: "der" },
+  { word: "Schuhe", gender: "die" },
+  { word: "Pullover", gender: "der" },
+  { word: "Rock", gender: "der" },
+  { word: "Kleid", gender: "das" },
+  { word: "Stiefel", gender: "die" },
+  { word: "Socken", gender: "die" },
+  { word: "Mütze", gender: "die" },
+  { word: "Handschuhe", gender: "die" },
+  { word: "Gürtel", gender: "der" },
+  { word: "Jeans", gender: "die" },
+  { word: "Krawatte", gender: "die" },
+  { word: "Weste", gender: "die" },
+];
+
+export {
+  words,
+  artiklundpronomen,
+  possessivartikel,
+  adjektivdeklination,
+  kleidung,
+  kleidungWords,
+};

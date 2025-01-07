@@ -25,12 +25,14 @@ import {
   artiklundpronomen,
   possessivartikel,
   adjektivdeklination,
+  kleidung,
 } from "../utils/words";
 
 const allSentences = {
   artiklundpronomen,
   possessivartikel,
   adjektivdeklination,
+  kleidung,
 };
 
 function SentenceFillGame() {
@@ -184,6 +186,23 @@ function SentenceFillGame() {
               onClick={() => handleCategorySelect("adjektivdeklination")}
             >
               Adjektivdeklination
+            </Button>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "#ff5722",
+                color: "#fff",
+                padding: { xs: "10px 20px", md: "12px 24px" },
+                fontSize: { xs: "0.9rem", md: "1rem" },
+                fontWeight: "bold",
+                textTransform: "uppercase",
+                ":hover": {
+                  backgroundColor: "#e64a19",
+                },
+              }}
+              onClick={() => handleCategorySelect("kleidung")}
+            >
+              Kleidung Wortschatz
             </Button>
           </Box>
         </Box>

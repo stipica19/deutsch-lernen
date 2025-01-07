@@ -10,7 +10,7 @@ import {
   Card,
   CardContent,
 } from "@mui/material";
-import { words } from "../utils/words";
+import { words, kleidungWords } from "../utils/words";
 
 const WordGuessGame = () => {
   const [numWords, setNumWords] = useState(10);
@@ -32,8 +32,11 @@ const WordGuessGame = () => {
     }
   }, []);
 
-  const handleStartGame = () => {
-    const shuffledWords = [...words].sort(() => Math.random() - 0.5);
+  const handleStartGame = (isKleidung = false) => {
+    const shuffledWords = isKleidung
+      ? [...kleidungWords].sort(() => Math.random() - 0.5)
+      : [...words].sort(() => Math.random() - 0.5);
+
     setSelectedWords(shuffledWords.slice(0, numWords));
     setIndex(0);
     setScore(0);
@@ -131,6 +134,19 @@ const WordGuessGame = () => {
               }}
             >
               Spiel starten
+            </Button>
+            <Button
+              onClick={() => handleStartGame(true)}
+              variant="contained"
+              color="secondary"
+              sx={{
+                mt: 3,
+                px: { xs: 2, md: 4 },
+                py: { xs: 1, md: 2 },
+                fontSize: { xs: "0.8rem", md: "1rem" },
+              }}
+            >
+              Kleidung Wortschatz spielen
             </Button>
           </CardContent>
         </Card>
